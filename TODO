@@ -1,0 +1,35 @@
+Project
+1.  My Element :{
+    i.    Container
+    ii.   Text
+    iii.  Button
+    iv.   Skeletal
+    v.    Loading
+    vi.   Icon
+    vii.  Input
+    viii. Header
+}
+
+2. Screens: {
+    i.    Login
+    ii.   Signup
+    iii.  Password
+    iv.   Bottom tap
+    v.    Modal  
+    v.    Alert
+    vi.   Dropdown
+    vii.  Animations
+    viii. Box or card
+}  
+3.  Projects :{
+    i.    Todo
+    ii.   News
+    iii.  Budget
+    iv.   Gallery
+    v.    Caller
+    vi.   Job updates
+    vii.  Startup tracker
+    viii. Trade tracker
+    ix.   Portfolio
+    x.    GetRid
+}
