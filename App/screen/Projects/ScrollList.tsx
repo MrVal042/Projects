@@ -91,9 +91,9 @@ export default function ScrollList({
         color={Colors.white}
         size={5}
         style={{
+          left: 10,
           position: 'absolute',
           top: Platform.OS === 'ios' ? 30 : 5,
-          left: 10,
           zIndex: 1000,
         }}
         onPress={() => navigation.goBack()}
