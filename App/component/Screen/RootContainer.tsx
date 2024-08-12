@@ -41,6 +41,7 @@ interface RootContainerProps extends SafeAreaViewProps {
   children?: React.ReactNode;
   height?: DimensionValue;
   hasForm?: boolean;
+  paddingTop?: number;
 }
 
 const {padding} = responsiveSizes;
@@ -57,6 +58,7 @@ const RootContainer: React.FC<RootContainerProps> = ({
   onBackPress,
   style,
   hasForm,
+  paddingTop,
   children,
   barStyle,
   title,
@@ -138,7 +140,7 @@ const RootContainer: React.FC<RootContainerProps> = ({
         style={{
           flex: 1,
           backgroundColor,
-          paddingTop: 10,
+          paddingTop: paddingTop || 10,
           paddingHorizontal: 15,
         }}>
         {hasForm ? (

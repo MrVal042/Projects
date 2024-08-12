@@ -18,7 +18,7 @@ import {
   Setting,
   Timer,
   Todo,
-  Whatsapp,
+  Whatsapp,GalleryView,
   Entry,
   AboutScreen,
 } from '@screen';
@@ -32,6 +32,8 @@ export default function BudgetNavigator() {
       <Screen name="Budget" component={Budget} />
       <Screen name="BottomSheet" component={BottomSheet} />
       <Screen name="Calender" component={Calender} />
+      <Screen name="GalleryView" component={GalleryView} />
+
       <Screen name="Camera" component={Camera} />
       <Screen name="Clock" component={Clock} />
       <Screen name="Contacts" component={Contacts} />

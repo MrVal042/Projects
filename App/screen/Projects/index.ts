@@ -1,5 +1,6 @@
 export {default as Notification} from './Notification';
 export {default as BottomSheet} from './BottomSheet';
+export {default as GalleryView} from './GalleryView';
 export {default as ScrollList} from './ScrollList';
 export {default as Progress} from './ProgressBar';
 export {default as Contacts} from './Contacts';

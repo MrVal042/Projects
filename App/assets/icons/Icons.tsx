@@ -1127,19 +1127,23 @@ function Icons({
   return showWrap ? (
     <TouchableOpacity
       {...{onPress}}
-      style={{
-        width: calculateWidth(size * 1.6),
-        height: calculateWidth(size * 1.6),
-        borderRadius: calculateWidth(size / 4),
-        padding: calculateWidth(size / 2.6),
-        backgroundColor: `${color || Colors.primary}33`,
-      }}>
+      style={[
+        {
+          width: calculateWidth(size * 1.6),
+          height: calculateWidth(size * 1.6),
+          borderRadius: calculateWidth(size / 4),
+          padding: calculateWidth(size / 2.6),
+          backgroundColor: `${color || Colors.grey}33`,
+        },
+        props.style,
+      ]}>
       <Svg
         width={calculateWidth(size / 1.2)}
         height={calculateWidth(size / 1.2)}
         viewBox={viewBox}
         fill="none"
-        {...props}>
+        {...props}
+        style={{}}>
         {IconMap[name]}
       </Svg>
     </TouchableOpacity>

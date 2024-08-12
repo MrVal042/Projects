@@ -1,3 +1,4 @@
+import { GalleryImageProps } from '@hooks';
 import {NavigatorScreenParams} from '@react-navigation/native';
 
 // AppRoute /////////////////////////////////////////////////////
@@ -14,6 +15,7 @@ export type ProjectRoutes = {
   [key in ProjectName]: {item: IProjectProps};
 } & {
   Entry: {item: IProjectProps};
+  GalleryView: {data: GalleryImageProps[]; photoIndex: number};
 };
 
 // TabNavigator //////////////////////////////////////////////////

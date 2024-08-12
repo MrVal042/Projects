@@ -1,6 +1,7 @@
 /* eslint-disable sort-keys */
 import {Dimensions} from 'react-native';
 
+export const SPACING = 20;
 // Function to calculate responsive dimensions based on orientation
 export const {
   width,
