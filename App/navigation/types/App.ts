@@ -1,4 +1,4 @@
-import { GalleryImageProps } from '@hooks';
+import {GalleryImageProps} from '@hooks';
 import {NavigatorScreenParams} from '@react-navigation/native';
 
 // AppRoute /////////////////////////////////////////////////////
@@ -23,7 +23,7 @@ export type TabRoutes = {
   Home: undefined;
   Explore: undefined;
   Projects: undefined;
-  About: undefined;
+  More: undefined;
 };
 
 export type AccountRoutes = {

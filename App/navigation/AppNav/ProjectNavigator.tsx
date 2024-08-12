@@ -18,22 +18,22 @@ import {
   Setting,
   Timer,
   Todo,
-  Whatsapp,GalleryView,
+  Whatsapp,
+  GalleryView,
   Entry,
-  AboutScreen,
+  AccountScreen,
 } from '@screen';
 
 const {Navigator, Screen} = createStackNavigator<ProjectRoutes>();
 
 export default function BudgetNavigator() {
   return (
-    <Navigator screenOptions={{headerShown: false}} initialRouteName="About">
-      <Screen name="About" component={AboutScreen} />
+    <Navigator screenOptions={{headerShown: false}} initialRouteName="Entry">
+      <Screen name="About" component={AccountScreen} />
       <Screen name="Budget" component={Budget} />
       <Screen name="BottomSheet" component={BottomSheet} />
       <Screen name="Calender" component={Calender} />
       <Screen name="GalleryView" component={GalleryView} />
-
       <Screen name="Camera" component={Camera} />
       <Screen name="Clock" component={Clock} />
       <Screen name="Contacts" component={Contacts} />

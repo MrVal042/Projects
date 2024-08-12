@@ -17,14 +17,14 @@ export default function VaButton({variants, label, ...props}: IButtonProps) {
   switch (variants) {
     case 'secondary':
       return (
-        <TouchableOpacity {...props} style={styles.button}>
+        <TouchableOpacity {...props} style={[styles.button, props.style]}>
           <Text>{label}</Text>
         </TouchableOpacity>
       );
 
     default:
       return (
-        <TouchableOpacity {...props} style={styles.button}>
+        <TouchableOpacity {...props} style={[styles.button, props.style]}>
           <Text>{label}</Text>
         </TouchableOpacity>
       );
@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
     margin: BUTTONS_SIZE / 2,
     minWidth: '30%',
     alignItems: 'center',
+    alignSelf: 'center',
     justifyContent: 'center',
     minHeight: BUTTONS_SIZE * 5,
   },

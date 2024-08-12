@@ -1,5 +1,6 @@
 export {default as TestScreen} from './TestScreen';
-export {default as ExploreScreen} from './Explore';
-export {default as AboutScreen} from './About';
-export {default as HomeScreen} from './Home';
+export {default as ExploreScreen} from './ExploreScreen';
+export {default as AccountScreen} from './AccountScreen';
+export {default as ProjectScreen} from './ProjectScreen';
+export {default as HomeScreen} from './HomeScreen';
 export * from './Projects';

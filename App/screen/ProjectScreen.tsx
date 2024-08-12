@@ -18,7 +18,7 @@ import {useNavigation} from '@react-navigation/native';
 import {AppRoute, useStackNavigationProp} from '@navigation';
 
 const BUTTONS_SIZE = 10;
-export default function Home() {
+export default function ProjectScreen() {
   const navigation =
     useNavigation<useStackNavigationProp<AppRoute, 'HomeScreen'>>();
   const {width} = useDimensions();
@@ -32,7 +32,7 @@ export default function Home() {
   };
 
   return (
-    <RootContainer>
+    <RootContainer hideBackIcon>
       <View style={styles.inputWrap}>
         <Icon name="search" size={4.5} />
         <TextInput
@@ -67,12 +67,14 @@ export default function Home() {
             <TouchableOpacity
               style={[styles.app]}
               onPress={() =>
-                navigation.navigate('ProjectNavigator', {
-                  screen: 'Entry',
-                  params: {
-                    item,
-                  },
-                })
+                item.name === 'About'
+                  ? navigation.navigate('TabNavigator', {screen: 'More'})
+                  : navigation.navigate('ProjectNavigator', {
+                      screen: 'Entry',
+                      params: {
+                        item,
+                      },
+                    })
               }>
               <Icon name={item.icon} size={9} />
             </TouchableOpacity>

@@ -7,7 +7,7 @@ import {Icon} from '@assets';
 import {Text} from '@component';
 import {TabRoutes} from '@navigation';
 import {Colors, height} from '@constant';
-import {About, Explore, Home, Projects} from '@screen';
+import {AccountScreen, ExploreScreen, HomeScreen, ProjectScreen} from '@screen';
 
 const {Screen, Navigator} = createBottomTabNavigator<TabRoutes>();
 
@@ -40,10 +40,10 @@ export default function TabNavigator() {
             : {height: height * 0.1},
         ],
       })}>
-      <Screen name="Home" component={Home} />
-      <Screen name="Explore" component={Explore} />
-      <Screen name="Projects" component={Projects} />
-      <Screen name="About" component={About} />
+      <Screen name="Home" component={HomeScreen} />
+      <Screen name="Explore" component={ExploreScreen} />
+      <Screen name="Projects" component={ProjectScreen} />
+      <Screen name="More" component={AccountScreen} />
     </Navigator>
   );
 }
@@ -52,12 +52,10 @@ const getName = (name: string) => {
   switch (name) {
     case 'Home':
       return 'home';
-    case 'Card':
-      return 'card';
-    case 'Transfer':
-      return 'transfer';
-    case 'Budget':
-      return 'budget';
+    case 'Explore':
+      return 'budget-alt';
+    case 'Projects':
+      return 'contacts';
     case 'More':
       return 'menu';
 

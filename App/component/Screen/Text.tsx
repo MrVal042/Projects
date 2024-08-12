@@ -1,5 +1,6 @@
 import {StyleProp, Text, TextProps, TextStyle} from 'react-native';
 import React from 'react';
+import {Colors} from '@constant';
 
 interface ITextProps extends TextProps {
   variant?:
@@ -19,7 +20,7 @@ interface ITextProps extends TextProps {
 
 export default function VaText({
   children,
-  color,
+  color = Colors.text,
   style,
   variant,
   textAlign,
