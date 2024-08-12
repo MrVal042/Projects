@@ -32,6 +32,12 @@
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>${EXECUTABLE_NAME} needs access to PhotoLibrary</string>
+	<key>NSCameraUsageDescription</key>
+	<string>${EXECUTABLE_NAME} needs access to camera</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>${EXECUTABLE_NAME} needs access to microphone</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
 	<key>UILaunchStoryboardName</key>

@@ -1,3 +1,40 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "strictBindCallApply": true,
+    "experimentalDecorators": true,
+    "baseUrl": "./app",
+    "paths": {
+      "@assets": ["./assets"],
+      "@base": ["./base"],
+      "@component": ["./component"],
+      "@constant": ["./constant"],
+      "@data": ["./data"],
+      "@navigation": ["./navigation"],
+      "@screen": ["./screen"],
+      "@service": ["./service"],
+      "@hooks": ["./hooks"],
+      "@store": ["./store"],
+      "@utils": ["./utils"]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js"
+  ]
 }

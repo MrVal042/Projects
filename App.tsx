@@ -1,28 +1,18 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {PersistGate} from 'redux-persist/integration/react';
+import {enableFreeze} from 'react-native-screens';
+import {Provider} from 'react-redux';
 import React from 'react';
+import store, {persistor} from '@store';
+import {LoadApp} from '@base';
+
+enableFreeze(true);
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Welcome and don't give up</Text>
-      <View style={styles.flexWrap}>
-        <Text>Tab 1</Text>
-        <Text>Tab 2</Text>
-        <Text>Tab 3</Text>
-      </View>
-    </View>
+    <Provider {...{store}}>
+      <PersistGate loading={null} {...{persistor}}>
+        <LoadApp />
+      </PersistGate>
+    </Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingHorizontal: 10,
-    justifyContent: 'center',
-  },
-  flexWrap: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-});
