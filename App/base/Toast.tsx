@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 
 import {Icon} from '@assets';
-import {boxShadow} from '@component';
+import {shadowStyle} from '@component';
 import {Colors, width} from '@constant';
 import {resetToast, useDotSelector} from '@store';
 
@@ -62,7 +62,7 @@ const Toaster = () => {
       style={[
         styles.toastContainer,
         {
-          ...boxShadow,
+          ...shadowStyle,
           transform: [{translateY: popAnim}],
         },
       ]}>

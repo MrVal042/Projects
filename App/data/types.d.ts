@@ -1,3 +1,14 @@
+type UserProps = {
+  _id: string;
+  avatar: string;
+  birthday: Date;
+  email: string;
+  firstName: string;
+  fullName: string;
+  lastName: string;
+  sex: 'female' | 'male';
+  subscriptionTier: string;
+};
 type IProjectProps = {
   category: string;
   completedAt: string;

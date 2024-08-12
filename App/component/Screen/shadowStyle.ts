@@ -3,24 +3,23 @@ import {Platform} from 'react-native';
 
 const backgroundColor = Colors.background;
 const shadowColor = Colors.black;
-const borderRadius = 15;
-const shadowHeight = 0.5;
+const borderRadius = 10;
+const shadowHeight = 5;
 
-const boxShadow =
+export const shadowStyle =
   Platform.OS === 'ios'
     ? {
-        shadowColor,
         backgroundColor,
+        shadowColor,
         shadowOffset: {width: 0, height: shadowHeight},
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
         borderRadius,
       }
     : {
-        borderRadius,
-        elevation: shadowHeight + 2,
         backgroundColor,
-        borderTopWidth: 0.2,
+        borderRadius,
+        elevation: shadowHeight,
       };
 
-export default boxShadow;
+export default shadowStyle;
