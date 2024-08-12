@@ -74,17 +74,13 @@ export default function Home() {
                   },
                 })
               }>
-              <Icon
-                name={item.icon}
-                color={item.name === 'Whatsapp' ? Colors.green : undefined}
-                size={9}
-              />
+              <Icon name={item.icon} size={9} />
             </TouchableOpacity>
             <Text
               adjustsFontSizeToFit={true}
               numberOfLines={1}
               style={{
-                color: 'black',
+                color: Colors.text,
                 fontWeight: '600',
                 textAlign: 'justify',
               }}>
