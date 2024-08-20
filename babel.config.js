@@ -18,8 +18,8 @@ module.exports = {
           '@utils': './app/utils',
         },
       },
-      'react-native-reanimated/plugin',
     ],
+    'react-native-reanimated/plugin',
   ],
   presets: ['module:@react-native/babel-preset'],
 };
