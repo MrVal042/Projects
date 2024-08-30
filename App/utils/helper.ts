@@ -34,18 +34,64 @@ export const monthNames = [
   'December',
 ];
 
-
+const currencyMap: {[x: string]: string} = {
+  AE: 'AED', // United Arab Emirate Dirham
+  AU: 'AUD', // Australian Dollar
+  BR: 'BRL', // Brazilian Real
+  CA: 'CAD', // Canadian Dollar
+  CH: 'CHF', // Swiss Franc
+  CN: 'CNY', // Chinese Yuan Renminbi
+  EU: 'EUR', // European Union Euro
+  GB: 'GBP', // British Pound Sterling
+  IN: 'INR', // Indian Rupee
+  JP: 'JPY', // Japanese Yen
+  KR: 'KRW', // South Korean Won
+  MX: 'MXN', // Mexican Peso
+  NG: 'NGN', // Nigeria Naira
+  NZ: 'NZD', // New Zealand Dollar
+  RU: 'RUB', // Russian Ruble
+  SA: 'SAR', // Saudi Riyal
+  SG: 'SGD', // Singapore Dollar
+  TR: 'TRY', // Turkish Lira
+  US: 'USD', // United States Dollar
+  ZA: 'ZAR', // South African Rand
+  KE: 'KES', //	Kenyan Shilling
+  EG: 'EGP', // Egyptian Pound
+  GH: 'GHS', //	Ghanaian Cedi
+  MA: 'MAD', //	Moroccan Dirham
+  ET: 'ETB', //	Ethiopian Birr
+  TZ: 'TZS', //	Tanzanian Shilling
+  UG: 'UGX', //	Ugandan Shilling
+  DZ: 'DZD', //	Algerian Dinar
+  AO: 'AOA', //	Angolan Kwanza
+  ZW: 'ZWL', //	Zimbabwean Dollar
+  TN: 'TND', //	Tunisian Dinar
+  ZM: 'ZMW', //	Zambian Kwacha
+  MZ: 'MZN', //	Mozambican Metical
+  BW: 'BWP', //	Botswanan Pula
+  NA: 'NAD', //	Namibian Dollar
+  RW: 'RWF', //	Rwandan Franc
+  SC: 'SCR', //	Seychellois Rupee
+  MU: 'MUR', //	Mauritian Rupee
+  CI: 'XOF', // West African CFA Franc
+  SN: 'XOF', //	West African CFA Franc
+  CM: 'XAF', //	Central African CFA Franc
+  GA: 'XAF', //	Central African CFA Franc
+  CG: 'XAF', //	Central African CFA Franc
+};
 
 export const capitalize = (text: string) =>
   text.charAt?.(0).toUpperCase?.() + text.toLowerCase().slice?.(1);
 
-export const formatCurrency = (
-  value: number,
-  countryCode?: string,
-  currencyCode?: string,
-): string => {
-  return new Intl.NumberFormat(`en-${countryCode ? countryCode : 'ZA'}`, {
-    currency: currencyCode ? currencyCode : 'ZAR',
+export const formatCurrency = (value: number, countryCode?: string): string => {
+  countryCode = countryCode || 'NG';
+
+  // Get the currency code based on the provided country code
+  const currencyCode = currencyMap[countryCode] || 'NGN'; // Default to USD if not found
+
+  // Format the value
+  return new Intl.NumberFormat(`en-${countryCode}`, {
+    currency: currencyCode,
     minimumFractionDigits: 2,
     style: 'currency',
   }).format(value);

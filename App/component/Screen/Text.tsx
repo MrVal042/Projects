@@ -16,6 +16,7 @@ interface ITextProps extends TextProps {
   textAlign?: TextStyle['textAlign'];
   children?: React.ReactNode | string;
   color?: string;
+  textTransform?: 'none' | 'capitalize' | 'uppercase' | 'lowercase';
 }
 
 export default function VaText({
@@ -25,6 +26,7 @@ export default function VaText({
   variant,
   textAlign,
   size,
+  textTransform,
   ...props
 }: ITextProps) {
   const styles = ((): StyleProp<TextStyle> => {
@@ -46,7 +48,7 @@ export default function VaText({
     }
   })();
   return (
-    <Text {...props} style={[styles, {textAlign, color}, style]}>
+    <Text {...props} style={[styles, {textAlign, color, textTransform}, style]}>
       {children}
     </Text>
   );

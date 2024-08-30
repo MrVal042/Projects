@@ -14,9 +14,10 @@ export {default as Gallery} from './Gallery';
 export {default as Google} from './Google';
 export {default as Projects} from './Entry';
 export {default as Camera} from './Camera';
-export {default as Budget} from './Budget';
 export {default as Photos} from './Photos';
 export {default as Entry} from './Entry';
 export {default as Timer} from './Timer';
 export {default as Clock} from './Clock';
 export {default as Todo} from './Todo';
+
+export * from './Budget';

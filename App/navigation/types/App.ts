@@ -7,6 +7,7 @@ export type AppRoute = {
   TabNavigator: NavigatorScreenParams<TabRoutes>;
   AccountNavigator: NavigatorScreenParams<AccountRoutes>;
   HomeScreen: undefined;
+  BudgetDetail: {item: BudgetProps};
 };
 
 // NotificationNavigator //////////////////////////////////////////

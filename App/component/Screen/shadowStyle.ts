@@ -15,11 +15,15 @@ export const shadowStyle =
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
         borderRadius,
+        borderWidth: 0.2,
+        borderColor: Colors.grey,
       }
     : {
         backgroundColor,
         borderRadius,
         elevation: shadowHeight,
+        borderWidth: 0.2,
+        borderColor: Colors.grey,
       };
 
 export default shadowStyle;

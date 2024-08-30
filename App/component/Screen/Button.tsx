@@ -5,6 +5,7 @@ import {
 } from 'react-native';
 import React from 'react';
 import Text from './Text';
+import {Colors} from '@constant';
 
 interface IButtonProps extends TouchableOpacityProps {
   variants?: 'primary' | 'secondary';
@@ -17,15 +18,27 @@ export default function VaButton({variants, label, ...props}: IButtonProps) {
   switch (variants) {
     case 'secondary':
       return (
-        <TouchableOpacity {...props} style={[styles.button, props.style]}>
-          <Text>{label}</Text>
+        <TouchableOpacity
+          {...props}
+          style={[
+            styles.button,
+            props.style,
+            {width: '95%', borderColor: Colors.primary},
+          ]}>
+          <Text color={Colors.primary}>{label}</Text>
         </TouchableOpacity>
       );
 
     default:
       return (
-        <TouchableOpacity {...props} style={[styles.button, props.style]}>
-          <Text>{label}</Text>
+        <TouchableOpacity
+          {...props}
+          style={[
+            styles.button,
+            props.style,
+            {backgroundColor: Colors.primary, width: '95%'},
+          ]}>
+          <Text color={Colors.white}>{label}</Text>
         </TouchableOpacity>
       );
   }
