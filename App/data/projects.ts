@@ -25,6 +25,18 @@ export const projects: IProjectProps[] = [
   },
   {
     route: '',
+    description: 'Biometric',
+    tools: ['React native', 'faker api'],
+    createdAt: '',
+    completedAt: '',
+    sourceCode: '',
+    downloadLink: '',
+    name: 'Biometric',
+    category: '',
+    icon: 'fingerprint',
+  },
+  {
+    route: '',
     description: 'Animated BottomSheet',
     tools: ['React native', 'faker api'],
     createdAt: '',

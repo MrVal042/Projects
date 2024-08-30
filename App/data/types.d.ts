@@ -26,6 +26,7 @@ type ProjectName =
   | 'Budget'
   | 'About'
   | 'Todo'
+  | 'Biometric'
   | 'Notification'
   | 'ScrollList'
   | 'Progress'

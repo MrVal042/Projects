@@ -34,6 +34,10 @@
 	</dict>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>${EXECUTABLE_NAME} needs access to PhotoLibrary</string>
+	<key>NSFaceIDUsageDescription</key>
+ <string>${EXECUTABLE_NAME} needs use Face ID to authenticate you</string>
+	<key>NSTouchIDUsageDescription</key>
+ <string>${EXECUTABLE_NAME} needs use Face ID to authenticate you</string>
 	<key>NSCameraUsageDescription</key>
 	<string>${EXECUTABLE_NAME} needs access to camera</string>
 	<key>NSMicrophoneUsageDescription</key>

@@ -3,6 +3,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {
   Budget,
   BottomSheet,
+  Biometric,
   Calender,
   Camera,
   Clock,
@@ -31,13 +32,15 @@ export default function BudgetNavigator() {
     <Navigator screenOptions={{headerShown: false}} initialRouteName="Entry">
       <Screen name="About" component={AccountScreen} />
       <Screen name="Budget" component={Budget} />
+      <Screen name="Biometric" component={Biometric} />
       <Screen name="BottomSheet" component={BottomSheet} />
       <Screen name="Calender" component={Calender} />
-      <Screen name="GalleryView" component={GalleryView} />
       <Screen name="Camera" component={Camera} />
       <Screen name="Clock" component={Clock} />
       <Screen name="Contacts" component={Contacts} />
+      <Screen name="Entry" component={Entry} options={{headerShown: false}} />
       <Screen name="Gallery" component={Gallery} />
+      <Screen name="GalleryView" component={GalleryView} />
       <Screen name="Google" component={Google} />
       <Screen name="Keyboard" component={Keyboard} />
       <Screen name="Messages" component={Messages} />
@@ -49,7 +52,6 @@ export default function BudgetNavigator() {
       <Screen name="Timer" component={Timer} />
       <Screen name="Todo" component={Todo} />
       <Screen name="Whatsapp" component={Whatsapp} />
-      <Screen name="Entry" component={Entry} options={{headerShown: false}} />
     </Navigator>
   );
 }

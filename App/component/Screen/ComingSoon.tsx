@@ -8,6 +8,7 @@ import Animated, {
   withSequence,
   withTiming,
 } from 'react-native-reanimated';
+import {Colors} from '@constant';
 import {useDimensions} from '@hooks';
 import {Button, Divider, Text} from '@component';
 import {
@@ -15,7 +16,6 @@ import {
   GestureDetector,
   GestureHandlerRootView,
 } from 'react-native-gesture-handler';
-import {Colors} from '@constant';
 
 const TIME = 2000;
 export default function ComingSoon({
