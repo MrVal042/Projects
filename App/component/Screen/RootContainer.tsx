@@ -21,6 +21,7 @@ import {
 import {Colors, responsiveSizes, width} from '@constant';
 import {Icon} from '@assets';
 import Text from './Text';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 
 interface RootContainerProps extends SafeAreaViewProps {
   backgroundColor?: ColorValue;
@@ -121,37 +122,39 @@ const RootContainer: React.FC<RootContainerProps> = ({
   };
 
   return (
-    <SafeAreaView
-      style={{
-        flex: 1,
-        marginBottom: -bottom,
-        backgroundColor: headerBackgroundColor || backgroundColor,
-      }}>
-      <StatusBar
-        backgroundColor={headerBackgroundColor || 'transparent'}
-        barStyle={
-          barStyle || headerBackgroundColor ? 'light-content' : 'dark-content'
-        }
-      />
-      <RenderHeader />
-      <Pressable
-        {...props}
-        onPress={() => Keyboard.dismiss()}
+    <GestureHandlerRootView>
+      <SafeAreaView
         style={{
           flex: 1,
-          backgroundColor,
-          paddingTop: paddingTop || 10,
-          paddingHorizontal: 15,
+          marginBottom: -bottom,
+          backgroundColor: headerBackgroundColor || backgroundColor,
         }}>
-        {hasForm ? (
-          <KeyboardAvoidingView behavior="height">
-            {children}
-          </KeyboardAvoidingView>
-        ) : (
-          children
-        )}
-      </Pressable>
-    </SafeAreaView>
+        <StatusBar
+          backgroundColor={headerBackgroundColor || 'transparent'}
+          barStyle={
+            barStyle || headerBackgroundColor ? 'light-content' : 'dark-content'
+          }
+        />
+        <RenderHeader />
+        <Pressable
+          {...props}
+          onPress={() => Keyboard.dismiss()}
+          style={{
+            flex: 1,
+            backgroundColor,
+            paddingTop: paddingTop || 10,
+            paddingHorizontal: 15,
+          }}>
+          {hasForm ? (
+            <KeyboardAvoidingView behavior="height">
+              {children}
+            </KeyboardAvoidingView>
+          ) : (
+            children
+          )}
+        </Pressable>
+      </SafeAreaView>
+    </GestureHandlerRootView>
   );
 };
 const styles = StyleSheet.create({

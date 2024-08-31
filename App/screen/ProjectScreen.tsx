@@ -1,3 +1,4 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {
   FlatList,
@@ -13,8 +14,7 @@ import {projects} from '@data';
 import {Colors} from '@constant';
 import {useDimensions} from '@hooks';
 import {capitalize, searchData} from '@utils';
-import {RootContainer, Text} from '@component';
-import {useNavigation} from '@react-navigation/native';
+import {Divider, RootContainer, Text} from '@component';
 import {AppRoute, useStackNavigationProp} from '@navigation';
 
 const BUTTONS_SIZE = 10;
@@ -55,7 +55,6 @@ export default function ProjectScreen() {
       </View>
       <FlatList
         numColumns={4}
-        contentContainerStyle={{flex: 1}}
         keyExtractor={(_, indx) => String(indx)}
         data={searchData({
           query,
@@ -90,6 +89,7 @@ export default function ProjectScreen() {
             </Text>
           </Pressable>
         )}
+        ListFooterComponent={<Divider space="m" />}
       />
     </RootContainer>
   );

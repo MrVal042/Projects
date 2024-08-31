@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, TouchableOpacity} from 'react-native';
 import React from 'react';
 import Animated, {
   useAnimatedStyle,
@@ -21,9 +21,13 @@ const TIME = 2000;
 export default function ComingSoon({
   title,
   onPress,
+  onTouchText,
+  disableComingSoon,
 }: {
   title?: string;
   onPress?: () => void;
+  onTouchText?: () => void;
+  disableComingSoon?: boolean;
 }) {
   const {height} = useDimensions();
   const linear = useSharedValue<number>(0);
@@ -69,15 +73,15 @@ export default function ComingSoon({
         <Animated.View style={[styles.box, animatedChanged, animatedStyles]}>
           <Animated.View style={[styles.box, secondStyles]}>
             <Text textAlign="center" color={Colors.primary}>
-              Hey!....Don't touch me
+              Just kidding... 😂
             </Text>
           </Animated.View>
-          <Text textAlign="center" style={styles.text}>
-            {title} Coming Soon {pressed.value}
-          </Text>
-          {pressed.value ? (
-            <Text textAlign="center">Hey!....Don't touch me</Text>
-          ) : null}
+          <TouchableOpacity onPress={onTouchText}>
+            <Text textAlign="center" style={styles.text}>
+              {title} {!disableComingSoon ? 'Coming Soon' : null}{' '}
+            </Text>
+          </TouchableOpacity>
+          {pressed.value ? <Text textAlign="center"></Text> : null}
         </Animated.View>
       </GestureDetector>
       <Divider />
