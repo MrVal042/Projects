@@ -6,9 +6,11 @@ export default function Photos() {
   return (
     <RootContainer title="Photos">
       <WebView
-        source={{uri: 'https://photos.google.com/'}}
         style={{flex: 1}}
+        scrollEnabled={true}
+        nestedScrollEnabled={true}
         showsVerticalScrollIndicator={false}
+        source={{uri: 'https://photos.google.com/'}}
       />
     </RootContainer>
   );

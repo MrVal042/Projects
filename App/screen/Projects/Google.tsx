@@ -6,9 +6,11 @@ export default function Google() {
   return (
     <RootContainer title="Google">
       <WebView
-        source={{uri: 'https://www.google.com'}}
         style={{flex: 1}}
+        scrollEnabled={true}
+        nestedScrollEnabled={true}
         showsVerticalScrollIndicator={false}
+        source={{uri: 'https://www.google.com'}}
       />
     </RootContainer>
   );
