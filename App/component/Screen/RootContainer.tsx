@@ -143,7 +143,7 @@ const RootContainer: React.FC<RootContainerProps> = ({
             flex: 1,
             backgroundColor,
             paddingTop: paddingTop || 10,
-            paddingHorizontal: 15,
+            paddingHorizontal: padding,
           }}>
           {hasForm ? (
             <KeyboardAvoidingView behavior="height">

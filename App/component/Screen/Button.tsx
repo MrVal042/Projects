@@ -10,22 +10,36 @@ import {Colors} from '@constant';
 interface IButtonProps extends TouchableOpacityProps {
   variants?: 'primary' | 'secondary';
   label: string;
+  disabled?: boolean;
   onPress?: () => void;
+  marginBottom?: number;
 }
 const BUTTONS_SIZE = 10;
 
-export default function VaButton({variants, label, ...props}: IButtonProps) {
+export default function VaButton({
+  variants,
+  label,
+  marginBottom = 20,
+  disabled,
+  ...props
+}: IButtonProps) {
   switch (variants) {
     case 'secondary':
       return (
         <TouchableOpacity
+          disabled={disabled}
           {...props}
           style={[
             styles.button,
             props.style,
-            {width: '95%', borderColor: Colors.primary},
+            {
+              width: '95%',
+              marginBottom,
+              borderColor: disabled ? Colors.grey : Colors.primary,
+              backgroundColor: disabled ? Colors.lightGrey : undefined,
+            },
           ]}>
-          <Text color={Colors.primary}>{label}</Text>
+          <Text color={disabled ? Colors.grey : Colors.primary}>{label}</Text>
         </TouchableOpacity>
       );
 
@@ -33,10 +47,17 @@ export default function VaButton({variants, label, ...props}: IButtonProps) {
       return (
         <TouchableOpacity
           {...props}
+          disabled={disabled}
           style={[
             styles.button,
             props.style,
-            {backgroundColor: Colors.primary, width: '95%'},
+            {
+              backgroundColor: disabled
+                ? Colors.inactiveButton
+                : Colors.primary,
+              width: '95%',
+              marginBottom,
+            },
           ]}>
           <Text color={Colors.white}>{label}</Text>
         </TouchableOpacity>

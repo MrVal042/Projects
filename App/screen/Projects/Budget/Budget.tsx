@@ -1,16 +1,25 @@
 import React from 'react';
-import {ComingSoon, Divider, RootContainer, Text} from '@component';
+import {Divider, RootContainer, Text} from '@component';
 import {FlatList} from 'react-native';
 import {budgetData} from './data';
 import BudgetCard from './BudgetCard';
 
 export default function Budget() {
   /**
+   * SCREEN:
+     1. Signup  ✅
+     2. Login ✅
+     3. HomePage
+     4. Notification
+     5. Create/manage budget
+     6. Setting 
+     7. Profile
    income | expenses
    add INCOME = salary| business| interest| trade| rental| realized
    add EXPENSE
   
    */
+
   return (
     <RootContainer title="Budget">
       <Text>

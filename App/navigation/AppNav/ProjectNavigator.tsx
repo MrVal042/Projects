@@ -51,6 +51,7 @@ export default function BudgetNavigator() {
       <Screen name="Setting" component={Setting} />
       <Screen name="Timer" component={Timer} />
       <Screen name="Todo" component={Todo} />
+
       <Screen name="Whatsapp" component={Whatsapp} />
     </Navigator>
   );

@@ -1,2 +1,2 @@
-export {default as Budget} from './Budget';
+export {default as Budget} from './Entry';
 export {default as BudgetDetail} from './BudgetDetails';

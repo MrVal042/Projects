@@ -62,35 +62,44 @@ type SubCategories =
   | 'Vacation'
   | 'Water';
 
-type FixedCategory =
-  | 'Debt Payments'
-  | 'Housing'
-  | 'Subscriptions'
-  | 'Transportation'
-  | 'Utilities';
+type IFixedCategory = {
+  type: 'Fixed';
+  category:
+    | 'Debt Payments'
+    | 'Housing'
+    | 'Subscriptions'
+    | 'Transportation'
+    | 'Utilities';
+};
 
-type VariableCategory =
-  | 'Entertainment'
-  | 'Education'
-  | 'Food'
-  | 'Gifts and Donations'
-  | 'Health and Medical'
-  | 'Household Supplies'
-  | 'Miscellaneous'
-  | 'Personal Care';
+type IVariableCategory = {
+  type: 'Variable';
+  category:
+    | 'Entertainment'
+    | 'Education'
+    | 'Food'
+    | 'Gifts and Donations'
+    | 'Health and Medical'
+    | 'Household Supplies'
+    | 'Miscellaneous'
+    | 'Personal Care';
+};
 
-type SavingCategory =
-  | 'Emergency'
-  | 'Goal-Based Savings'
-  | 'Investment'
-  | 'Retirement: 401(k)| IRA';
+type ISavingCategory = {
+  type: 'Saving & Investment';
+  category:
+    | 'Emergency'
+    | 'Goal-Based Savings'
+    | 'Investment'
+    | 'Retirement: 401(k)| IRA';
+};
 
-  type BudgetStatus = "completed" | "pending" | "active"
+type BudgetStatus = 'completed' | 'pending' | 'active';
 
-type BudgetProps = {
+type IBudgetProps = IFixedCategory | IVariableCategory | ISavingCategory;
+
+interface BudgetProps extends IBudgetProps {
   createdAt: string;
-  type: 'Fixed' | 'Variable' | 'Saving & Investment';
-  category: FixedCategory | VariableCategory | SavingCategory;
   status: BudgetStatus;
   subCategory: SubCategories;
   completedAt: string;
@@ -99,4 +108,4 @@ type BudgetProps = {
   spent: number;
   month: string;
   year: string;
-};
+}
