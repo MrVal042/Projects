@@ -1,15 +1,15 @@
-import {View} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 import React, {useEffect} from 'react';
-import {RootContainer} from '@component';
+import {View} from 'react-native';
 import {
   AppRoute,
   ProjectRoutes,
   StackNavigationProps,
   useStackNavigationProp,
 } from '@navigation';
-import {useNavigation} from '@react-navigation/native';
 import {Icon} from '@assets';
 import {Colors} from '@constant';
+import {RootContainer} from '@component';
 
 export default function RenderProjects({
   route,

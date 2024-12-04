@@ -117,8 +117,8 @@ export const BottomSheet = forwardRef<IBottomSheetRef, IBottomSheet>(
               <View style={styles.line} />
               <TouchableOpacity style={styles.closeBtn} onPress={handleClose}>
                 <Icon
-                  onPress={handleClose}
                   name="close"
+                  onPress={handleClose}
                   color={Colors.text}
                   size={(CLOSE_SIZE / 4) * 0.6}
                 />

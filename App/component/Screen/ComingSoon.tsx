@@ -18,6 +18,7 @@ import {
 } from 'react-native-gesture-handler';
 
 const TIME = 2000;
+
 export default function ComingSoon({
   title,
   onPress,
